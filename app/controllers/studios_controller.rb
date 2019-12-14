@@ -1,6 +1,7 @@
 class StudiosController < ApplicationController
   def index
-    studios = Studios.all
+    studios = Studio.all
+    render json: studios
   end
 
   def show
