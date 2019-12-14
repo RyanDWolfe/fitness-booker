@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  studio_class_id: 1
+  class_time: MyString
+
+two:
+  studio_class_id: 1
+  class_time: MyString

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  status: 1
+  user_id: 1
+  class_id: 1
+  studio_id: 1
+  class_time: 2019-12-14 10:42:38
+
+two:
+  status: 1
+  user_id: 1
+  class_id: 1
+  studio_id: 1
+  class_time: 2019-12-14 10:42:38
