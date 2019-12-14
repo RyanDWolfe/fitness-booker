@@ -2,7 +2,7 @@ class ReservationsController < ApplicationController
 
   def create
     reservation = Reservation.create(reservation_param)
-    #render my_schedule
+    render json: reservation
   end
 
   def update

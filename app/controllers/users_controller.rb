@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   def create
     user = User.create(user_param)
-    #route to my_schedule
+    render json: user
   end
 
   def show

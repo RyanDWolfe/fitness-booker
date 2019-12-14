@@ -9,6 +9,7 @@ class StudioClassesController < ApplicationController
 
   def create
     studio_class = StudioClass.create(studio_class_param)
+    render json: studio_class
   end
 
   def update

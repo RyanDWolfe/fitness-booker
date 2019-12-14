@@ -10,7 +10,7 @@ class StudiosController < ApplicationController
 
   def create
     studio = Studio.create(studio_param)
-    #render json: studio
+    render json: studio
   end
 
   def update
