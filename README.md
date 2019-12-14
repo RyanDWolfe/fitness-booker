@@ -10,6 +10,12 @@ Things you may want to cover:
 * System dependencies
 
 * Configuration
+``` zsh
+rake start
+rake db:setup
+rake db:migrate
+rake db:seed
+```
 
 * Database creation
 

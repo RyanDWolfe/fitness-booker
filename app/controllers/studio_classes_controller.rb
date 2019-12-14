@@ -27,7 +27,7 @@ class StudioClassesController < ApplicationController
   private
 
   def studio_class_param
-    params.require(:studio_class).permit(:name, :type, :description, :occupancy, :studio_id)
+    params.require(:studio_class).permit(:name, :class_type, :description, :occupancy, :studio_id)
   end
 
 end

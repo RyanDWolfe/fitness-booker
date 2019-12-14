@@ -22,6 +22,8 @@ gem 'rack-cors', :require => 'rack/cors'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 gem 'pry'
+#postgress server
+gem 'pg'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

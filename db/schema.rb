@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2019_12_14_164238) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "reservations", force: :cascade do |t|
     t.integer "status"
     t.integer "user_id"
@@ -23,7 +26,7 @@ ActiveRecord::Schema.define(version: 2019_12_14_164238) do
 
   create_table "studio_classes", force: :cascade do |t|
     t.string "name"
-    t.string "type"
+    t.string "class_type"
     t.string "description"
     t.integer "occupancy"
     t.integer "studio_id"
@@ -33,7 +36,8 @@ ActiveRecord::Schema.define(version: 2019_12_14_164238) do
 
   create_table "studios", force: :cascade do |t|
     t.string "name"
-    t.string "type"
+    t.string "description"
+    t.string "class_type"
     t.string "address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
