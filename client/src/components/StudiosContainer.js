@@ -2,13 +2,34 @@ import React, { Component } from 'react'
 
 class StudiosContainer extends Component {
 
+    constructor(props) {
+        super(props)
+        this.state = {
+          studios: {}
+        }
+      }
 
-  getStudios() {
-
+  async getStudios() {
+    try {
+      const response = await fetch('http://localhost:3000/api/v1/studios');
+      const data = await response.json();
+      this.setState({studios: data});
+    } catch (err) {
+      console.log(err)
+    }
   }
+
+  createStudiosList(studios) {
+   
+  
+    }
+
   
   
   
+  async componentDidMount() {
+    await this.getStudios();
+  }
   
   
     render() {
