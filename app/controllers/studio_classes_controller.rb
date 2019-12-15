@@ -1,10 +1,12 @@
 class StudioClassesController < ApplicationController
   def index
     classes = StudioClass.all
+    render json: classes
   end
 
   def show
     studio_class = StudioClass.find(params[:id])
+    render json: studio_class
   end
 
   def create
@@ -19,7 +21,7 @@ class StudioClassesController < ApplicationController
 
   def destroy
     studio_class = StudioClass.find(params[:id])
-    reservations = studio_class.reservations.all #check casing
+    reservations = studio_class.reservations.all
     reservations.destroy
     studio_class.destroy
   end

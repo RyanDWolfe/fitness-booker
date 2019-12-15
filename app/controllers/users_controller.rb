@@ -7,6 +7,7 @@ class UsersController < ApplicationController
   def show
     user = User.find(params[:id])
     reservations = user.reservations.all
+    render json: reservations
   end
 
   def destroy
