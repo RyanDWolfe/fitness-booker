@@ -19,16 +19,25 @@ class StudiosContainer extends Component {
     }
   }
 
-  createStudiosList(studios) {
-   
-  
-    }
+  createStudioCard(){
+
+  }
+
+  createStudiosList() {
+   const ul = document.getElementById('studioList')
+   this.state.studios.map(function(studio){
+    let li = document.createElement('li')
+    li.innerHTML = studio.name
+    ul.appendChild(li)
+   })
+  }
 
   
   
   
   async componentDidMount() {
     await this.getStudios();
+    await this.createStudiosList()
   }
   
   
@@ -40,7 +49,7 @@ class StudiosContainer extends Component {
 	    placeholder="search" maxLength="50" />
 	</div>  	    
 	<div className="listWrapper">
-	   <ul className="taskList">
+	   <ul id="studioList"className="taskList">
 	   </ul>
 	</div>
       </div>    
