@@ -50,7 +50,7 @@ input[placeholder] {
 .listWrapper {
   position: absolute;
   bottom: 50px;
-  top: 160px;
+  top: 200px;
   right: 0;
   left: 0;
   overflow: auto;
@@ -67,4 +67,29 @@ input[placeholder] {
 
 #studioList {
   list-style-type: none;
+}
+/* NavBar */
+
+.navBar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+.navItem {
+  float: left;
+}
+
+.navItem a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.navItem a:hover {
+  background-color: #111;
 }

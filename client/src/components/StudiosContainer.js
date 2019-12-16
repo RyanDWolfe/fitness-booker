@@ -51,6 +51,7 @@ class StudiosContainer extends Component {
           />
         </div>
         <div className="listWrapper">
+          <h3>Studios:</h3>
           <ul id="studioList">{this.createStudioCards(this.state.studios)}</ul>
         </div>
       </div>
