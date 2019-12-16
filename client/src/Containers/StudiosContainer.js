@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import StudioCards from "../components/StudioCards";
 
 class StudiosContainer extends Component {
   constructor(props) {
@@ -19,21 +20,6 @@ class StudiosContainer extends Component {
     }
   }
 
-  createStudioCards(studios) {
-    return studios.map(studio => {
-      return (
-        <li>
-          <div className="studioCard">
-            <h1>{studio.name}</h1>
-            <h3>{studio.class_type}</h3>
-            <p>{studio.description}</p>
-            <p>{studio.address}</p>
-          </div>
-        </li>
-      );
-    });
-  }
-
   async componentDidMount() {
     await this.getStudios();
   }
@@ -52,7 +38,9 @@ class StudiosContainer extends Component {
             />
           </div>
           <h3>Studios:</h3>
-          <ul id="studioList">{this.createStudioCards(this.state.studios)}</ul>
+          <ul id="studioList">
+            <StudioCards studios={this.state.studios} />
+          </ul>
         </div>
       </div>
     );

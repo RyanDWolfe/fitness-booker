@@ -4,8 +4,8 @@ import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 import "./index.css";
 import App from "./App";
 import Navbar from "./components/NavBar";
-import StudiosContainer from "./components/StudiosContainer";
-import ClassesContainer from "./components/ClassesContainer";
+import StudiosContainer from "./Containers/StudiosContainer";
+import ClassesContainer from "./Containers/ClassesContainer";
 import * as serviceWorker from "./serviceWorker";
 
 const studios = () => {
