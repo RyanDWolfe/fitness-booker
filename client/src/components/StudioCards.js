@@ -5,9 +5,12 @@ const StudioCards = ({ studios }) => {
       <li>
         <div className="studioCard">
           <h1>{studio.name}</h1>
-          <h3>{studio.class_type}</h3>
+          <h3>Type: {studio.class_type}</h3>
           <p>{studio.description}</p>
-          <p>{studio.address}</p>
+          <p>
+            <strong>Address: </strong>
+            {studio.address}
+          </p>
         </div>
       </li>
     );
