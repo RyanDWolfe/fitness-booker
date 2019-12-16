@@ -44,7 +44,7 @@ class StudiosContainer extends Component {
       <div>
         <div className="inputContainer">
           <input
-            className="taskInput"
+            className="studioInput"
             type="text"
             placeholder="search"
             maxLength="50"
