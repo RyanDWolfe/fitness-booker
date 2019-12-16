@@ -22,10 +22,10 @@ input[placeholder] {
 }
 
 .container {
-  width: 40%;
-  height: 800px;
+  width: 50%;
+  height: 100px;
   position: relative;
-  margin: 0 auto;
+  margin: 10px auto;
   border-radius: 5px;
 }
 
@@ -37,7 +37,7 @@ input[placeholder] {
 }
 
 .inputContainer {
-  padding: 15px;
+  padding: 40px;
 }
 
 .inputContainer .studioInput {

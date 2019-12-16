@@ -42,15 +42,15 @@ class StudiosContainer extends Component {
     console.log(this.state.studios);
     return (
       <div>
-        <div className="inputContainer">
-          <input
-            className="studioInput"
-            type="text"
-            placeholder="search"
-            maxLength="50"
-          />
-        </div>
         <div className="listWrapper">
+          <div className="inputContainer">
+            <input
+              className="studioInput"
+              type="text"
+              placeholder="search"
+              maxLength="50"
+            />
+          </div>
           <h3>Studios:</h3>
           <ul id="studioList">{this.createStudioCards(this.state.studios)}</ul>
         </div>
