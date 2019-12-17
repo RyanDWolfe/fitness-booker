@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import ReservationCards from "../components/ReservationCards";
-import APICalls from "../components/APICalls";
 
 class MyScheduleContainer extends Component {
   constructor(props) {

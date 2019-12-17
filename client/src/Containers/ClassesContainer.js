@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import ClassCards from "../components/ClassCards";
-import APICalls from "../components/APICalls";
 
 class ClassesContainer extends Component {
   constructor(props) {
