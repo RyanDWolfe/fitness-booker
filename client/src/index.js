@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import "./index.css";
 import App from "./App";
 import Navbar from "./components/NavBar";
+import HomeContainer from "./Containers/HomeContainer";
 import MyScheduleContainer from "./Containers/MyScheduleContainer";
 import StudiosContainer from "./Containers/StudiosContainer";
 import ClassesContainer from "./Containers/ClassesContainer";
@@ -13,6 +14,7 @@ ReactDOM.render(
   <Router>
     <div>
       <Navbar />
+      <Route exact path="/" component={HomeContainer} />
       <Route exact path="/MySchedule" component={MyScheduleContainer} />
       <Route exact path="/studios" component={StudiosContainer} />
       <Route exact path="/classes" component={ClassesContainer} />
