@@ -8,22 +8,6 @@ import StudiosContainer from "./Containers/StudiosContainer";
 import ClassesContainer from "./Containers/ClassesContainer";
 import * as serviceWorker from "./serviceWorker";
 
-const studios = () => {
-  return (
-    <div>
-      <h1>Studios Page</h1>
-    </div>
-  );
-};
-
-const classes = () => {
-  return (
-    <div>
-      <h1>Classes Page</h1>
-    </div>
-  );
-};
-
 ReactDOM.render(
   <Router>
     <div>
