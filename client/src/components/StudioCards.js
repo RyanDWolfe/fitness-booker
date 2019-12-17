@@ -2,7 +2,7 @@ import React, { Component } from "react";
 const StudioCards = ({ studios }) => {
   return studios.map(studio => {
     return (
-      <li>
+      <li key={studio.id.toString()}>
         <div className="studioCard">
           <h1>{studio.name}</h1>
           <h3>Type: {studio.class_type}</h3>
