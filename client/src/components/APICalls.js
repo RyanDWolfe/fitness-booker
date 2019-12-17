@@ -11,18 +11,42 @@ class APICalls extends Component {
       console.log(err);
     }
   }
-}
 
-// const getStudios = () => {
-//   try {
-//     const response = fetch("http://localhost:3001/api/v1/studios");
-//     const data = response.json();
-//     console.log(data);
-//     this.setState({ studios: data });
-//   } catch (err) {
-//     console.log(err);
-//   }
-// };
+  // const getStudios = () => {
+  //   try {
+  //     const response = fetch("http://localhost:3001/api/v1/studios");
+  //     const data = response.json();
+  //     console.log(data);
+  //     this.setState({ studios: data });
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // };
+
+  async getClasses() {
+    try {
+      const response = await fetch(
+        "http://localhost:3001/api/v1/studio_classes"
+      );
+      const data = await response.json();
+      console.log(data);
+      this.setState({ classes: data });
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  async getReservations() {
+    try {
+      const response = await fetch("http://localhost:3001/api/v1/reservations");
+      const data = await response.json();
+      console.log(data);
+      this.setState({ reservations: data });
+    } catch (err) {
+      console.log(err);
+    }
+  }
+}
 
 export default APICalls;
 

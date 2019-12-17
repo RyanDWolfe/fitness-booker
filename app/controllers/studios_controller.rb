@@ -1,7 +1,9 @@
 class StudiosController < ApplicationController
   def index
     studios = Studio.all
-    render json: studios
+     render json: studios
+    # classes = Studio_Class.all
+    #render json: studios, :include => [:studio_classes] 
   end
 
   def show
