@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import StudioCards from "../components/StudioCards";
+import APICalls from "../components/APICalls";
 
 class StudiosContainer extends Component {
   constructor(props) {
@@ -22,6 +23,10 @@ class StudiosContainer extends Component {
 
   async componentDidMount() {
     await this.getStudios();
+    // {
+    //   this.getStudios();
+    // }
+    // <APICalls />;
   }
 
   render() {
