@@ -13,7 +13,7 @@ ReactDOM.render(
   <Router>
     <div>
       <Navbar />
-      <Route exact path="/my_schedule" component={MyScheduleContainer} />
+      <Route exact path="/MySchedule" component={MyScheduleContainer} />
       <Route exact path="/studios" component={StudiosContainer} />
       <Route exact path="/classes" component={ClassesContainer} />
       <App />

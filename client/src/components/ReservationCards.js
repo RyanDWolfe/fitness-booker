@@ -4,7 +4,7 @@ const ReservationCards = ({ reservations }) => {
     return (
       <li key={reservation.id.toString()}>
         <div className="reservationCard">
-          <h1>{reservation.status}</h1>
+          <h1>Status: {reservation.status}</h1>
           <h3>Class: {reservation.class_id}</h3>
           <h3>Studio: {reservation.studio_id}</h3>
         </div>
