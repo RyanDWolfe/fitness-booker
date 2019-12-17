@@ -1,7 +1,9 @@
-function studiosReducer(state = { studios: [] }, action) {
+function studiosReducer(state = { all: [] }, action) {
   let idx;
   switch (action.type) {
-    case "ADD_STUDIO": // do I put my fetch call inside each case and add it to state?
+    case "GET_STUDIOS":
+      return { ...state, all: action.studios };
+    case "ADD_STUDIO":
       return [...state, action.studio];
 
     case "REMOVE_STUDIO":

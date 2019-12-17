@@ -1,31 +1,11 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import StudioCards from "../components/StudioCards";
+import { getStudios } from "../Actions/actions";
 
 class StudiosContainer extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      studios: []
-    };
-  }
-
-  async getStudios() {
-    try {
-      const response = await fetch("http://localhost:3001/api/v1/studios");
-      const data = await response.json();
-      console.log(data);
-      this.setState({ studios: data });
-    } catch (err) {
-      console.log(err);
-    }
-  }
-
   async componentDidMount() {
-    await this.getStudios();
-    // {
-    //   this.getStudios();
-    // }
-    // <APICalls />;
+    this.props.getStudios();
   }
 
   render() {
@@ -42,7 +22,7 @@ class StudiosContainer extends Component {
           </div>
           <h3>Studios:</h3>
           <ul id="studioList">
-            <StudioCards studios={this.state.studios} />
+            <StudioCards studios={this.props.studios} />
           </ul>
         </div>
       </div>
@@ -50,4 +30,6 @@ class StudiosContainer extends Component {
   }
 }
 
-export default StudiosContainer;
+export default connect(state => ({ studios: state.studios.all }), {
+  getStudios
+})(StudiosContainer);
