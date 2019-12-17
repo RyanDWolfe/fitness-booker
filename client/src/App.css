@@ -40,13 +40,6 @@ input[placeholder] {
   padding: 40px;
 }
 
-.inputContainer .studioInput {
-  padding: 10px;
-  width: 100%;
-  border-radius: 25px;
-  box-sizing: border-box;
-}
-
 .listWrapper {
   position: absolute;
   bottom: 50px;
@@ -58,6 +51,13 @@ input[placeholder] {
 
 /* studio index view */
 
+.inputContainer .studioInput {
+  padding: 10px;
+  width: 100%;
+  border-radius: 25px;
+  box-sizing: border-box;
+}
+
 .studioCard {
   background: lightblue;
   border: 2px solid black;
@@ -68,6 +68,26 @@ input[placeholder] {
 #studioList {
   list-style-type: none;
 }
+/* class index view */
+
+.inputContainer .classInput {
+  padding: 10px;
+  width: 100%;
+  border-radius: 25px;
+  box-sizing: border-box;
+}
+
+.classCard {
+  background: lightblue;
+  border: 2px solid black;
+  padding: 10px 5px;
+  margin: 10px;
+}
+
+#classList {
+  list-style-type: none;
+}
+
 /* NavBar */
 
 .navBar {
