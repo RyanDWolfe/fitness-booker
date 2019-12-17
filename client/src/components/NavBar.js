@@ -6,6 +6,11 @@ class Navbar extends React.Component {
     return (
       <div className="navBar">
         <div className="navItem">
+          <NavLink to="/MySchedule" exact>
+            My Schedule
+          </NavLink>
+        </div>
+        <div className="navItem">
           <NavLink to="/studios" exact>
             Studios
           </NavLink>

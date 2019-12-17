@@ -30,7 +30,6 @@ class StudiosContainer extends Component {
   }
 
   render() {
-    console.log(this.state.studios);
     return (
       <div>
         <div className="listWrapper">

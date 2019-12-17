@@ -25,3 +25,9 @@ class APICalls extends Component {
 // };
 
 export default APICalls;
+
+//build POST Request for Studios
+//build GET Request for Classes
+//build POST Request for Classes
+//build POST Request for Reservations
+//build PATCH Request for Reservations
