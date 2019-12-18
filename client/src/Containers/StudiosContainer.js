@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { getStudios } from "../Actions/actions";
+import { getStudios, addStudio } from "../Actions/actions";
 import StudioCards from "../components/StudioCards";
 import ControlledPopup from "./PopUp";
 
@@ -23,7 +23,7 @@ class StudiosContainer extends Component {
           </div>
           <div>
             <ControlledPopup />
-            <button className="add" onClick={() => alert("clicked")}>
+            <button className="add" onClick={() => this.props.addStudio()}>
               Add Studio
             </button>
             <button className="remove">Remove Studio</button>
@@ -39,5 +39,6 @@ class StudiosContainer extends Component {
 }
 
 export default connect(state => ({ studios: state.studios.all }), {
-  getStudios
+  getStudios,
+  addStudio
 })(StudiosContainer);

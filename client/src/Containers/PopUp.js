@@ -30,10 +30,9 @@ class ControlledPopup extends React.Component {
             <a className="close" onClick={this.closeModal}>
               &times;
             </a>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae
-            magni omnis delectus nemo, maxime molestiae dolorem numquam
-            mollitia, voluptate ea, accusamus excepturi deleniti ratione
-            sapiente! Laudantium, aperiam doloribus. Odit, aut.
+            PLACE FORM HERE PLACE FORM HEREPLACE FORM HEREPLACE FORM HEREPLACE
+            FORM HEREPLACE FORM HEREPLACE FORM HEREPLACE FORM HEREPLACE FORM
+            HEREPLACE FORM HEREPLACE FORM HEREPLACE FORM HEREPLACE FORM HERE
           </div>
         </Popup>
       </div>

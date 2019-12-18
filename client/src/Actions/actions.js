@@ -16,12 +16,25 @@ export const getStudios = () => {
   };
 };
 
-export const addStudio = () => {
+export const addStudio = something => {
   // pass in new studio data
+  const studioData = {
+    studio: {
+      name: "TEST123",
+      class_type: "Spin",
+      address: "333 comeseeme lane"
+    }
+  };
   return async dispatch => {
     try {
-      const response = await fetch("http://localhost:3001/api/v1/studios"); //put request
-      const data = await response.json(); // might not need to return anything
+      const response = await fetch("http://localhost:3001/api/v1/studios", {
+        method: "POST",
+        body: JSON.stringify(studioData),
+        headers: {
+          "Content-Type": "application/json"
+        }
+      });
+      const data = await response.json();
       console.log(data);
       dispatch({
         type: "ADD_STUDIO",
@@ -34,9 +47,23 @@ export const addStudio = () => {
 };
 
 export const removeStudio = id => {
-  return {
-    type: "REMOVE_STUDIO",
-    id
+  return async dispatch => {
+    // need to pass in id...
+    // var = get all restaurants
+    // var2 = variable.filter(studio => studio_id === id)
+    // send removal request
+    //update state and render
+    try {
+      const response = await fetch("http://localhost:3001/api/v1/studios"); //put request
+      const data = await response.json(); // might not need to return anything
+      console.log(data);
+      dispatch({
+        type: "REMOVE_STUDIO",
+        studio: data
+      });
+    } catch (err) {
+      console.log(err);
+    }
   };
 };
 
