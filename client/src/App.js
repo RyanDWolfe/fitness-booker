@@ -4,7 +4,7 @@ import "./App.css";
 import Navbar from "./components/NavBar";
 import HomeContainer from "./Containers/HomeContainer";
 import MyScheduleContainer from "./Containers/MyScheduleContainer";
-import StudiosContainer from "./Containers/StudiosContainer";
+import StudiosContainer from "./Containers/Studios/StudiosContainer";
 import ClassesContainer from "./Containers/ClassesContainer";
 
 class App extends Component {

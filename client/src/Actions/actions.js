@@ -5,7 +5,6 @@ export const getStudios = () => {
     try {
       const response = await fetch("http://localhost:3001/api/v1/studios");
       const data = await response.json();
-      console.log(data);
       dispatch({
         type: "GET_STUDIOS",
         studios: data
@@ -76,7 +75,6 @@ export const getClasses = () => {
         "http://localhost:3001/api/v1/studio_classes"
       );
       const data = await response.json();
-      console.log(data);
       dispatch({
         type: "GET_CLASSES",
         classes: data
@@ -108,7 +106,6 @@ export const getReservations = () => {
     try {
       const response = await fetch("http://localhost:3001/api/v1/reservations");
       const data = await response.json();
-      console.log(data);
       dispatch({
         type: "GET_RESERVATIONS",
         reservations: data

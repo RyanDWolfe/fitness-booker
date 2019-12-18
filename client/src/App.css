@@ -110,6 +110,64 @@ button:hover {
   border: 1px solid #cfcece;
 }
 
+/*Forms */
+
+form {
+  padding: 20px;
+}
+
+form div {
+  margin: 10px;
+}
+
+form label {
+  font-weight: bold;
+}
+
+form input {
+  width: 100%;
+  padding: 10px 0px 10px 5px;
+  border-radius: 25px;
+  margin: 5px;
+  font-weight: bold;
+  background: rgb(253, 253, 176);
+}
+
+.submit {
+  background: rgb(122, 241, 241);
+}
+
+.submit:hover {
+  background: rgb(76, 78, 78);
+}
+
+/* NavBar */
+
+.navBar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+.navItem {
+  float: left;
+}
+
+.navItem a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.navItem a:hover {
+  background-color: #111;
+}
+
 /* My Schedule index view */
 
 .reservationCard {
@@ -161,31 +219,4 @@ button:hover {
 
 #classList {
   list-style-type: none;
-}
-
-/* NavBar */
-
-.navBar {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
-}
-
-.navItem {
-  float: left;
-}
-
-.navItem a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.navItem a:hover {
-  background-color: #111;
 }
