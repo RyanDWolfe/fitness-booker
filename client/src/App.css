@@ -52,21 +52,62 @@ input[placeholder] {
 /* Buttons */
 
 button {
-  padding: 10px 20px;
-  margin: 10px 40px;
+  padding: 10px 40px;
+  margin: 10px 0px 10px 40px;
   border-radius: 25px;
   box-sizing: border-box;
   border: 1px solid rgb(207, 207, 207);
+  font-weight: bold;
 }
 
 button:hover {
-  color: #111;
-  background: rgb(37, 159, 240);
+  background: rgb(76, 78, 78);
 }
 
 .add {
-  background: rgb(127, 166, 192);
+  background: rgb(131, 212, 142);
   color: white;
+}
+
+.remove {
+  background: rgb(192, 145, 127);
+  color: white;
+}
+
+/* Modal */
+
+.modal {
+  font-size: 12px;
+}
+.modal > .header {
+  width: 100%;
+  border-bottom: 1px solid gray;
+  font-size: 18px;
+  text-align: center;
+  padding: 5px;
+}
+.modal > .content {
+  width: 100%;
+  padding: 10px 5px;
+}
+.modal > .actions {
+  width: 100%;
+  padding: 10px 5px;
+  margin: auto;
+  text-align: center;
+}
+.modal > .close {
+  cursor: pointer;
+  position: absolute;
+  display: block;
+  padding: 2px 5px;
+  line-height: 20px;
+  right: -10px;
+  top: -10px;
+  font-size: 24px;
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid #cfcece;
 }
 
 /* My Schedule index view */

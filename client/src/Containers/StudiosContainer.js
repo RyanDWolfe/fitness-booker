@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getStudios } from "../Actions/actions";
 import StudioCards from "../components/StudioCards";
+import ControlledPopup from "./PopUp";
 
 class StudiosContainer extends Component {
   async componentDidMount() {
@@ -21,9 +22,11 @@ class StudiosContainer extends Component {
             />
           </div>
           <div>
-            <button className="add">
-              <strong>Add Studio</strong>
+            <ControlledPopup />
+            <button className="add" onClick={() => alert("clicked")}>
+              Add Studio
             </button>
+            <button className="remove">Remove Studio</button>
           </div>
           <h3>Studios:</h3>
           <ul id="studioList">
