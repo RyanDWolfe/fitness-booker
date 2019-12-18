@@ -2,9 +2,9 @@ import React from "react";
 import { connect } from "react-redux";
 import Popup from "reactjs-popup";
 import "../../App.css";
-import { addStudio } from "../../Actions/actions";
+import { removeStudio } from "../../Actions/actions";
 
-class StudiosAddPopup extends React.Component {
+class StudiosRemovePopup extends React.Component {
   constructor(props) {
     super(props);
     this.state = { open: false, studio: {} }; // not sure if I need to add it here
@@ -32,8 +32,8 @@ class StudiosAddPopup extends React.Component {
   render() {
     return (
       <div>
-        <button className="add" onClick={this.openModal}>
-          Add Studio
+        <button className="remove" onClick={this.openModal}>
+          Remove Studio
         </button>
         <Popup
           open={this.state.open}
@@ -45,23 +45,20 @@ class StudiosAddPopup extends React.Component {
               &times;
             </button>
             <form onSubmit={event => this.handleSubmit(event)}>
-              <h2>Add Studio</h2>
+              <h2>Remove Studio</h2>
               <label>Name: </label>
-              <input
-                type="text"
-                value={this.state.value}
-                onChange={this.handleChange}
-              />
-              <label>type: </label>
-              <input type="text" />
-              <label>Description: </label>
-              <input type="text" />
-              <label>Address: </label>
-              <input type="text" />
+              <div className="studioSelect">
+                <select>
+                  {this.props.studios.map(studio => {
+                    return <option value={studio.id}> {studio.name} </option>;
+                  })}
+                </select>
+              </div>
+
               <input
                 className="submit"
                 type="submit"
-                // onClick={() => this.props.addStudio(FormData)}
+                // onClick={() => this.props.removeStudio(FormData)}
               />
             </form>
           </div>
@@ -71,4 +68,6 @@ class StudiosAddPopup extends React.Component {
   }
 }
 
-export default connect(null, { addStudio })(StudiosAddPopup);
+export default connect(state => ({ studios: state.studios.all }), {
+  removeStudio
+})(StudiosRemovePopup);

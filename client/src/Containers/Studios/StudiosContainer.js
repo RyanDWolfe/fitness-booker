@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { getStudios, addStudio } from "../../Actions/actions";
+import { getStudios, addStudio, removeStudio } from "../../Actions/actions";
 import StudioCards from "../../components/StudioCards";
 import StudiosAddPopup from "./StudiosAddPopup";
+import StudiosRemovePopup from "./StudiosRemovePopup";
 
 class StudiosContainer extends Component {
   async componentDidMount() {
@@ -26,7 +27,13 @@ class StudiosContainer extends Component {
             <button className="add" onClick={() => this.props.addStudio()}>
               Add Studio OLD
             </button>
-            <button className="remove">Remove Studio</button>
+            <StudiosRemovePopup />
+            <button
+              className="remove"
+              onClick={() => this.props.removeStudio()}
+            >
+              Remove Studio OLD
+            </button>
           </div>
           <h3>Studios:</h3>
           <ul id="studioList">
@@ -40,5 +47,6 @@ class StudiosContainer extends Component {
 
 export default connect(state => ({ studios: state.studios.all }), {
   getStudios,
-  addStudio
+  addStudio,
+  removeStudio
 })(StudiosContainer);
