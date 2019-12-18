@@ -32,7 +32,7 @@ class StudiosAddPopup extends React.Component {
               &times;
             </button>
             <form>
-              <h3>Add Studio</h3>
+              <h2>Add Studio</h2>
               <label>Name: </label>
               <input className="textField" type="text" />
               <label>type: </label>

@@ -133,11 +133,11 @@ form input {
   background: rgb(253, 253, 176);
 }
 
-.submit {
+form .submit {
   background: rgb(122, 241, 241);
 }
 
-.submit:hover {
+form .submit:hover {
   background: rgb(76, 78, 78);
 }
 
