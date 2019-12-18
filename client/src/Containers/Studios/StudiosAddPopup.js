@@ -7,7 +7,10 @@ import { addStudio } from "../../Actions/actions";
 class StudiosAddPopup extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { open: false, studio: {} }; // not sure if I need to add it here
+    this.state = {
+      open: false,
+      studio: { name: "", type: "", description: "", address: "" }
+    };
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
   }
@@ -19,14 +22,13 @@ class StudiosAddPopup extends React.Component {
   }
 
   handleChange(event) {
-    this.setState({ name: event.target.name }); // not working
+    this.setState({
+      studio: { ...this.state.studio, [event.target.name]: event.target.value }
+    });
   }
 
   handleSubmit = event => {
-    //not sure I need this function
-    event.preventDefault();
-    this.setState({ studio: event.target.name });
-    this.props.addStudio(this.state.studio);
+    this.props.addStudio(this.state.studio.id);
   };
 
   render() {
@@ -49,20 +51,32 @@ class StudiosAddPopup extends React.Component {
               <label>Name: </label>
               <input
                 type="text"
-                value={this.state.value}
-                onChange={this.handleChange}
+                name="name"
+                value={this.state.studio.name}
+                onChange={this.handleChange.bind(this)}
               />
               <label>type: </label>
-              <input type="text" />
-              <label>Description: </label>
-              <input type="text" />
-              <label>Address: </label>
-              <input type="text" />
               <input
-                className="submit"
-                type="submit"
-                // onClick={() => this.props.addStudio(FormData)}
+                type="text"
+                name="type"
+                value={this.state.studio.type}
+                onChange={this.handleChange.bind(this)}
               />
+              <label>Description: </label>
+              <input
+                type="text"
+                name="description"
+                value={this.state.studio.description}
+                onChange={this.handleChange.bind(this)}
+              />
+              <label>Address: </label>
+              <input
+                type="text"
+                name="address"
+                value={this.state.studio.address}
+                onChange={this.handleChange.bind(this)}
+              />
+              <input className="submit" type="submit" />
             </form>
           </div>
         </Popup>

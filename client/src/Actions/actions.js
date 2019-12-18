@@ -38,16 +38,17 @@ export const addStudio = studioData => {
 
 export const removeStudio = id => {
   return async dispatch => {
-    // need to pass in id...
-    const id = 10;
     try {
-      const response = await fetch("http://localhost:3001/api/v1/studios/10", {
-        method: "DELETE",
-        body: JSON.stringify(id),
-        headers: {
-          "Content-Type": "application/json"
+      const response = await fetch(
+        `http://localhost:3001/api/v1/studios/${id}`,
+        {
+          method: "DELETE",
+          body: JSON.stringify(id),
+          headers: {
+            "Content-Type": "application/json"
+          }
         }
-      });
+      );
       const data = await response.json();
       dispatch({
         type: "REMOVE_STUDIO",

@@ -24,16 +24,7 @@ class StudiosContainer extends Component {
           </div>
           <div>
             <StudiosAddPopup />
-            <button className="add" onClick={() => this.props.addStudio()}>
-              Add Studio OLD
-            </button>
             <StudiosRemovePopup />
-            <button
-              className="remove"
-              onClick={() => this.props.removeStudio()}
-            >
-              Remove Studio OLD
-            </button>
           </div>
           <h3>Studios:</h3>
           <ul id="studioList">

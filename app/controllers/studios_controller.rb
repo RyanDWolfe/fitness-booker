@@ -23,12 +23,15 @@ class StudiosController < ApplicationController
   end
 
   def destroy
+    # binding.remote_pry
     studio = Studio.find(params[:id])
-    classes = studio.studio_classes.all
-    reservations = studio.studio_classes.reservations.all
-    reservations.destroy
-    classes.destroy
+    # classes = studio.studio_classes.all
+    # reservations = studio.studio_classes.reservations.all
+    # reservations.destroy
+    # classes.destroy
     studio.destroy
+#rails dependent destroy https://stackoverflow.com/questions/29560805/how-to-use-dependent-destroy-in-rails 
+
   end
 
   private

@@ -7,7 +7,7 @@ import { removeStudio } from "../../Actions/actions";
 class StudiosRemovePopup extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { open: false, studio: {} }; // not sure if I need to add it here
+    this.state = { open: false, studio: { id: "" } };
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
   }
@@ -19,14 +19,13 @@ class StudiosRemovePopup extends React.Component {
   }
 
   handleChange(event) {
-    this.setState({ name: event.target.name }); // not working
+    this.setState({
+      studio: { ...this.state.studio, [event.target.name]: event.target.value }
+    });
   }
 
   handleSubmit = event => {
-    //not sure I need this function
-    event.preventDefault();
-    this.setState({ studio: event.target.name });
-    this.props.addStudio(this.state.studio);
+    this.props.removeStudio(this.state.studio.id);
   };
 
   render() {
@@ -48,18 +47,18 @@ class StudiosRemovePopup extends React.Component {
               <h2>Remove Studio</h2>
               <label>Name: </label>
               <div className="studioSelect">
-                <select>
+                <select name="id" onChange={this.handleChange.bind(this)}>
                   {this.props.studios.map(studio => {
-                    return <option value={studio.id}> {studio.name} </option>;
+                    return (
+                      <option key={studio.id.toString()} value={studio.id}>
+                        {" "}
+                        {studio.name}{" "}
+                      </option>
+                    );
                   })}
                 </select>
               </div>
-
-              <input
-                className="submit"
-                type="submit"
-                // onClick={() => this.props.removeStudio(FormData)}
-              />
+              <input className="submit" type="submit" />
             </form>
           </div>
         </Popup>
