@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import StudioCards from "../components/StudioCards";
 import { getStudios } from "../Actions/actions";
+import StudioCards from "../components/StudioCards";
 
 class StudiosContainer extends Component {
   async componentDidMount() {

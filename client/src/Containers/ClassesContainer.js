@@ -1,33 +1,11 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { getClasses } from "../Actions/actions";
 import ClassCards from "../components/ClassCards";
 
 class ClassesContainer extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      classes: []
-    };
-  }
-
-  async getClasses() {
-    try {
-      const response = await fetch(
-        "http://localhost:3001/api/v1/studio_classes"
-      );
-      const data = await response.json();
-      console.log(data);
-      this.setState({ classes: data });
-    } catch (err) {
-      console.log(err);
-    }
-  }
-
   async componentDidMount() {
-    await this.getClasses();
-    // {
-    //   this.getStudios();
-    // }
-    // <APICalls />;
+    this.props.getClasses();
   }
 
   render() {
@@ -44,7 +22,7 @@ class ClassesContainer extends Component {
           </div>
           <h3>Classes:</h3>
           <ul id="classList">
-            <ClassCards classes={this.state.classes} />
+            <ClassCards classes={this.props.classes} />
           </ul>
         </div>
       </div>
@@ -52,4 +30,6 @@ class ClassesContainer extends Component {
   }
 }
 
-export default ClassesContainer;
+export default connect(state => ({ classes: state.classes.all }), {
+  getClasses
+})(ClassesContainer);

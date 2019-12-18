@@ -1,31 +1,11 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { getReservations } from "../Actions/actions";
 import ReservationCards from "../components/ReservationCards";
 
 class MyScheduleContainer extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      reservations: []
-    };
-  }
-
-  async getReservations() {
-    try {
-      const response = await fetch("http://localhost:3001/api/v1/reservations");
-      const data = await response.json();
-      console.log(data);
-      this.setState({ reservations: data });
-    } catch (err) {
-      console.log(err);
-    }
-  }
-
   async componentDidMount() {
-    await this.getReservations();
-    // {
-    //   this.getStudios();
-    // }
-    // <APICalls />;
+    this.props.getReservations();
   }
 
   render() {
@@ -34,7 +14,7 @@ class MyScheduleContainer extends Component {
         <div className="listWrapper">
           <h3>Reservations:</h3>
           <ul id="reservationList">
-            <ReservationCards reservations={this.state.reservations} />
+            <ReservationCards reservations={this.props.reservations} />
           </ul>
         </div>
       </div>
@@ -42,4 +22,6 @@ class MyScheduleContainer extends Component {
   }
 }
 
-export default MyScheduleContainer;
+export default connect(state => ({ reservations: state.reservations.all }), {
+  getReservations
+})(MyScheduleContainer);
