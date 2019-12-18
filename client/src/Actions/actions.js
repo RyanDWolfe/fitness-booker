@@ -16,10 +16,20 @@ export const getStudios = () => {
   };
 };
 
-export const addStudio = studio => {
-  return {
-    type: "ADD_STUDIO",
-    studio
+export const addStudio = () => {
+  // pass in new studio data
+  return async dispatch => {
+    try {
+      const response = await fetch("http://localhost:3001/api/v1/studios"); //put request
+      const data = await response.json(); // might not need to return anything
+      console.log(data);
+      dispatch({
+        type: "ADD_STUDIO",
+        studio: data
+      });
+    } catch (err) {
+      console.log(err);
+    }
   };
 };
 

@@ -49,6 +49,26 @@ input[placeholder] {
   overflow: auto;
 }
 
+/* Buttons */
+
+button {
+  padding: 10px 20px;
+  margin: 10px 40px;
+  border-radius: 25px;
+  box-sizing: border-box;
+  border: 1px solid rgb(207, 207, 207);
+}
+
+button:hover {
+  color: #111;
+  background: rgb(37, 159, 240);
+}
+
+.add {
+  background: rgb(127, 166, 192);
+  color: white;
+}
+
 /* My Schedule index view */
 
 .reservationCard {
@@ -81,6 +101,7 @@ input[placeholder] {
 #studioList {
   list-style-type: none;
 }
+
 /* class index view */
 
 .inputContainer .classInput {

@@ -20,6 +20,11 @@ class StudiosContainer extends Component {
               maxLength="50"
             />
           </div>
+          <div>
+            <button className="add">
+              <strong>Add Studio</strong>
+            </button>
+          </div>
           <h3>Studios:</h3>
           <ul id="studioList">
             <StudioCards studios={this.props.studios} />
