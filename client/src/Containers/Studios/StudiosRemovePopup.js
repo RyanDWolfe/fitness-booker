@@ -5,24 +5,20 @@ import "../../App.css";
 import { removeStudio } from "../../Actions/actions";
 
 class StudiosRemovePopup extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { open: false, studio: { id: "" } };
-    this.openModal = this.openModal.bind(this);
-    this.closeModal = this.closeModal.bind(this);
-  }
-  openModal() {
-    this.setState({ open: true });
-  }
-  closeModal() {
-    this.setState({ open: false });
-  }
+  state = { open: false, studio: { id: "" } };
 
-  handleChange(event) {
+  openModal = () => {
+    this.setState({ open: true });
+  };
+  closeModal = () => {
+    this.setState({ open: false });
+  };
+
+  handleChange = event => {
     this.setState({
       studio: { ...this.state.studio, [event.target.name]: event.target.value }
     });
-  }
+  };
 
   handleSubmit = event => {
     this.props.removeStudio(this.state.studio.id);
@@ -47,7 +43,7 @@ class StudiosRemovePopup extends React.Component {
               <h2>Remove Studio</h2>
               <label>Name: </label>
               <div className="studioSelect">
-                <select name="id" onChange={this.handleChange.bind(this)}>
+                <select name="id" onChange={this.handleChange}>
                   {this.props.studios.map(studio => {
                     return (
                       <option key={studio.id.toString()} value={studio.id}>

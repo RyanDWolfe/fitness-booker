@@ -5,27 +5,31 @@ import "../../App.css";
 import { addStudio } from "../../Actions/actions";
 
 class StudiosAddPopup extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      open: false,
-      studio: { name: "", type: "", description: "", address: "" }
-    };
-    this.openModal = this.openModal.bind(this);
-    this.closeModal = this.closeModal.bind(this);
-  }
-  openModal() {
+  state = {
+    open: false,
+    studio: { name: "", class_type: "", description: "", address: "" }
+  };
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     open: false,
+  //     studio: { name: "", type: "", description: "", address: "" }
+  //   };
+  //   this.openModal = this.openModal.bind(this);
+  //   this.closeModal = this.closeModal.bind(this);
+  // }
+  openModal = () => {
     this.setState({ open: true });
-  }
-  closeModal() {
+  };
+  closeModal = () => {
     this.setState({ open: false });
-  }
+  };
 
-  handleChange(event) {
+  handleChange = event => {
     this.setState({
       studio: { ...this.state.studio, [event.target.name]: event.target.value }
     });
-  }
+  };
 
   handleSubmit = event => {
     this.props.addStudio(this.state.studio);
@@ -53,28 +57,28 @@ class StudiosAddPopup extends React.Component {
                 type="text"
                 name="name"
                 value={this.state.studio.name}
-                onChange={this.handleChange.bind(this)}
+                onChange={this.handleChange}
               />
               <label>type: </label>
               <input
                 type="text"
-                name="type"
-                value={this.state.studio.type}
-                onChange={this.handleChange.bind(this)}
+                name="class_type"
+                value={this.state.studio.class_type}
+                onChange={this.handleChange}
               />
               <label>Description: </label>
               <input
                 type="text"
                 name="description"
                 value={this.state.studio.description}
-                onChange={this.handleChange.bind(this)}
+                onChange={this.handleChange}
               />
               <label>Address: </label>
               <input
                 type="text"
                 name="address"
                 value={this.state.studio.address}
-                onChange={this.handleChange.bind(this)}
+                onChange={this.handleChange}
               />
               <input className="submit" type="submit" />
             </form>
