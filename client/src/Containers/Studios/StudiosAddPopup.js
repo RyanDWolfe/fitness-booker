@@ -28,7 +28,7 @@ class StudiosAddPopup extends React.Component {
   }
 
   handleSubmit = event => {
-    this.props.addStudio(this.state.studio.id);
+    this.props.addStudio(this.state.studio);
   };
 
   render() {
