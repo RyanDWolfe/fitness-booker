@@ -9,15 +9,7 @@ class StudiosAddPopup extends React.Component {
     open: false,
     studio: { name: "", class_type: "", description: "", address: "" }
   };
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     open: false,
-  //     studio: { name: "", type: "", description: "", address: "" }
-  //   };
-  //   this.openModal = this.openModal.bind(this);
-  //   this.closeModal = this.closeModal.bind(this);
-  // }
+
   openModal = () => {
     this.setState({ open: true });
   };
