@@ -79,10 +79,27 @@ export const getClasses = () => {
   };
 };
 
-export const addClass = studio_class => {
-  return {
-    type: "ADD_CLASS",
-    studio_class
+export const addClass = classData => {
+  return async dispatch => {
+    try {
+      const response = await fetch(
+        "http://localhost:3001/api/v1/studio_classes",
+        {
+          method: "POST",
+          body: JSON.stringify(classData),
+          headers: {
+            "Content-Type": "application/json"
+          }
+        }
+      );
+      const data = await response.json();
+      dispatch({
+        type: "ADD_CLASS",
+        studio_class: data
+      });
+    } catch (err) {
+      console.log(err);
+    }
   };
 };
 

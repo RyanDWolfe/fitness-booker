@@ -81,11 +81,11 @@ class ClassesAddPopup extends React.Component {
                 value={this.state.studio_class.description}
                 onChange={this.handleChange}
               />
-              <label>Address: </label>
+              <label>Occupancy: </label>
               <input
                 type="text"
-                name="address"
-                value={this.state.studio_class.address}
+                name="occupancy"
+                value={this.state.studio_class.occupancy}
                 onChange={this.handleChange}
               />
               <input className="submit" type="submit" />
