@@ -6,7 +6,7 @@ function studiosReducer(state = { all: [] }, action) {
     case "ADD_STUDIO":
       return { ...state, all: state.all.concat(action.studio) };
     case "REMOVE_STUDIO":
-      idx = state.findIndex(state => state.studio.id === action.id); //where is studio coming from? state?
+      idx = state.findIndex(state => state.studio.id === action.id);
       return [...state.slice(0, idx), ...state.slice(idx + 1)];
     default:
       return state;
