@@ -2,12 +2,18 @@ import React from "react";
 import { connect } from "react-redux";
 import Popup from "reactjs-popup";
 import "../../App.css";
-import { addStudio } from "../../Actions/actions";
+import { addClass } from "../../Actions/actions";
 
-class StudiosAddPopup extends React.Component {
+class ClassesAddPopup extends React.Component {
   state = {
     open: false,
-    studio: { name: "", class_type: "", description: "", address: "" }
+    studio_class: {
+      name: "",
+      class_type: "",
+      description: "",
+      occupancy: "",
+      studio_id: ""
+    }
   };
 
   openModal = () => {
@@ -19,19 +25,22 @@ class StudiosAddPopup extends React.Component {
 
   handleChange = event => {
     this.setState({
-      studio: { ...this.state.studio, [event.target.name]: event.target.value }
+      studio_class: {
+        ...this.state.studio_class,
+        [event.target.name]: event.target.value
+      }
     });
   };
 
   handleSubmit = event => {
-    this.props.addStudio(this.state.studio);
+    this.props.addClass(this.state.studio_class);
   };
 
   render() {
     return (
       <div>
         <button className="add" onClick={this.openModal}>
-          Add Studio
+          Add Class
         </button>
         <Popup
           open={this.state.open}
@@ -43,33 +52,40 @@ class StudiosAddPopup extends React.Component {
               &times;
             </button>
             <form onSubmit={event => this.handleSubmit(event)}>
-              <h2>Add Studio</h2>
+              <h2>Add Class</h2>
               <label>Name: </label>
               <input
                 type="text"
                 name="name"
-                value={this.state.studio.name}
+                value={this.state.studio_class.name}
+                onChange={this.handleChange}
+              />
+              <label>Studio: </label>
+              <input
+                type="text"
+                name="studio_id"
+                value={this.state.studio_class.studio_id}
                 onChange={this.handleChange}
               />
               <label>Type: </label>
               <input
                 type="text"
                 name="class_type"
-                value={this.state.studio.class_type}
+                value={this.state.studio_class.class_type}
                 onChange={this.handleChange}
               />
               <label>Description: </label>
               <input
                 type="text"
                 name="description"
-                value={this.state.studio.description}
+                value={this.state.studio_class.description}
                 onChange={this.handleChange}
               />
               <label>Address: </label>
               <input
                 type="text"
                 name="address"
-                value={this.state.studio.address}
+                value={this.state.studio_class.address}
                 onChange={this.handleChange}
               />
               <input className="submit" type="submit" />
@@ -81,4 +97,4 @@ class StudiosAddPopup extends React.Component {
   }
 }
 
-export default connect(null, { addStudio })(StudiosAddPopup);
+export default connect(null, { addClass })(ClassesAddPopup);

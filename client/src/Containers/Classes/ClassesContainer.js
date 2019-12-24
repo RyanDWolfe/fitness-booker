@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { getClasses } from "../Actions/actions";
-import ClassCards from "../components/ClassCards";
+import { getClasses } from "../../Actions/actions";
+import ClassCards from "../../components/ClassCards";
+import ClassesAddPopup from "./ClassesAddPopup";
+import ClassesRemovePopup from "./ClassesRemovePopup";
 
 class ClassesContainer extends Component {
   async componentDidMount() {
@@ -19,6 +21,10 @@ class ClassesContainer extends Component {
               placeholder="search"
               maxLength="50"
             />
+          </div>
+          <div>
+            <ClassesAddPopup />
+            {/* <ClassesRemovePopup /> */}
           </div>
           <h3>Classes:</h3>
           <ul id="classList">

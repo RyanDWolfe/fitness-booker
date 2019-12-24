@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { getStudios, addStudio, removeStudio } from "../../Actions/actions";
+import { getStudios } from "../../Actions/actions";
 import StudioCards from "../../components/StudioCards";
 import StudiosAddPopup from "./StudiosAddPopup";
 import StudiosRemovePopup from "./StudiosRemovePopup";
@@ -37,7 +37,5 @@ class StudiosContainer extends Component {
 }
 
 export default connect(state => ({ studios: state.studios.all }), {
-  getStudios,
-  addStudio,
-  removeStudio
+  getStudios
 })(StudiosContainer);

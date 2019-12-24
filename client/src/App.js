@@ -5,7 +5,7 @@ import Navbar from "./components/NavBar";
 import HomeContainer from "./Containers/HomeContainer";
 import MyScheduleContainer from "./Containers/MyScheduleContainer";
 import StudiosContainer from "./Containers/Studios/StudiosContainer";
-import ClassesContainer from "./Containers/ClassesContainer";
+import ClassesContainer from "./Containers/Classes/ClassesContainer";
 
 class App extends Component {
   render() {
