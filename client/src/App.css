@@ -70,6 +70,8 @@ button:hover {
 }
 
 .remove {
+  padding: 10px 12px 10px 12px;
+  margin: 10px 10px 10px 10px;
   background: rgb(226, 158, 126);
   color: white;
 }
@@ -194,6 +196,8 @@ form .submit:hover {
 }
 
 .studioCard {
+  display: flex;
+  justify-content: space-between;
   background: rgb(47, 167, 247);
   border: 2px solid black;
   padding: 10px 5px;
@@ -218,6 +222,8 @@ form .submit:hover {
 }
 
 .classCard {
+  display: flex;
+  justify-content: space-between;
   background: lightblue;
   border: 2px solid black;
   padding: 10px 5px;
@@ -226,4 +232,9 @@ form .submit:hover {
 
 #classList {
   list-style-type: none;
+}
+
+.reserve {
+  background: rgb(37, 40, 233);
+  color: white;
 }
