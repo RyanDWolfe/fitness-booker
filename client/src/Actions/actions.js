@@ -104,9 +104,26 @@ export const addClass = classData => {
 };
 
 export const removeClass = id => {
-  return {
-    type: "REMOVE_CLASS",
-    id
+  return async dispatch => {
+    try {
+      const response = await fetch(
+        `http://localhost:3001/api/v1/studio_classes/${id}`,
+        {
+          method: "DELETE",
+          body: JSON.stringify(id),
+          headers: {
+            "Content-Type": "application/json"
+          }
+        }
+      );
+      const data = await response.json();
+      dispatch({
+        type: "REMOVE_CLASS",
+        studio_class: data
+      });
+    } catch (err) {
+      console.log(err);
+    }
   };
 };
 

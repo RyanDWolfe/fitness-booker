@@ -21,8 +21,6 @@ class StudioClassesController < ApplicationController
 
   def destroy
     studio_class = StudioClass.find(params[:id])
-    reservations = studio_class.reservations.all
-    reservations.destroy
     studio_class.destroy
   end
 

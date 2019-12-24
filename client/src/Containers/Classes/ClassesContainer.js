@@ -24,7 +24,7 @@ class ClassesContainer extends Component {
           </div>
           <div>
             <ClassesAddPopup />
-            {/* <ClassesRemovePopup /> */}
+            <ClassesRemovePopup />
           </div>
           <h3>Classes:</h3>
           <ul id="classList">
