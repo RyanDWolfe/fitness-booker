@@ -1,4 +1,6 @@
 import React from "react";
+import StudiosRemovePopup from "../Containers/Studios/StudiosRemovePopup";
+
 const StudioCards = ({ studios }) => {
   return studios.map(studio => {
     return (
@@ -16,7 +18,7 @@ const StudioCards = ({ studios }) => {
             <h3>Available Classes: 4</h3> {/*make dynamic*/}
           </div>
           <div>
-            <button className="remove">X</button>
+            <StudiosRemovePopup id={studio.id} />
           </div>
         </div>
       </li>

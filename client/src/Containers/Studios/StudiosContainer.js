@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import { getStudios } from "../../Actions/actions";
 import StudioCards from "../../components/StudioCards";
 import StudiosAddPopup from "./StudiosAddPopup";
-import StudiosRemovePopup from "./StudiosRemovePopup";
 
 class StudiosContainer extends Component {
   async componentDidMount() {
@@ -24,7 +23,6 @@ class StudiosContainer extends Component {
           </div>
           <div>
             <StudiosAddPopup />
-            <StudiosRemovePopup />
           </div>
           <h3>Studios:</h3>
           <ul id="studioList">
