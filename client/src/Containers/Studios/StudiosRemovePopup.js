@@ -5,7 +5,7 @@ import "../../App.css";
 import { removeStudio } from "../../Actions/actions";
 
 class StudiosRemovePopup extends React.Component {
-  state = { open: false, studio: { id: "" } }; // might not need studio in state
+  state = { open: false };
 
   openModal = () => {
     this.setState({ open: true });
@@ -13,12 +13,6 @@ class StudiosRemovePopup extends React.Component {
   closeModal = () => {
     this.setState({ open: false });
   };
-
-  // handleChange = event => {
-  //   this.setState({
-  //     studio: { ...this.state.studio, [event.target.name]: event.target.value }
-  //   });
-  // };
 
   handleSubmit = event => {
     this.props.removeStudio(this.props.id);
@@ -51,6 +45,6 @@ class StudiosRemovePopup extends React.Component {
   }
 }
 
-export default connect(state => ({ studios: state.studios.all }), {
+export default connect(null, {
   removeStudio
-})(StudiosRemovePopup); // might not need the studios state here
+})(StudiosRemovePopup);
