@@ -234,6 +234,10 @@ form .submit:hover {
   list-style-type: none;
 }
 
+.studioSelect {
+  width: 200px;
+}
+
 .reserve {
   background: rgb(37, 40, 233);
   color: white;

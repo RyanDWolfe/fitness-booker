@@ -35,7 +35,6 @@ class StudiosRemovePopup extends React.Component {
             </button>
             <form onSubmit={event => this.handleSubmit(event)}>
               <h2>Are you sure you want to remove this studio?</h2>
-
               <input className="submit" type="submit" />
             </form>
           </div>

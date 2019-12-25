@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { getClasses } from "../../Actions/actions";
+import { getClasses, getStudios } from "../../Actions/actions";
 import ClassCards from "../../components/ClassCards";
 import ClassesAddPopup from "./ClassesAddPopup";
 import ClassesRemovePopup from "./ClassesRemovePopup";
@@ -8,6 +8,7 @@ import ClassesRemovePopup from "./ClassesRemovePopup";
 class ClassesContainer extends Component {
   async componentDidMount() {
     this.props.getClasses();
+    this.props.getStudios();
   }
 
   render() {
@@ -36,6 +37,10 @@ class ClassesContainer extends Component {
   }
 }
 
-export default connect(state => ({ classes: state.classes.all }), {
-  getClasses
-})(ClassesContainer);
+export default connect(
+  state => ({ studios: state.studios.all, classes: state.classes.all }),
+  {
+    getClasses,
+    getStudios
+  }
+)(ClassesContainer);

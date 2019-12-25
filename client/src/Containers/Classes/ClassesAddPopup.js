@@ -60,13 +60,23 @@ class ClassesAddPopup extends React.Component {
                 value={this.state.studio_class.name}
                 onChange={this.handleChange}
               />
-              <label>Studio: </label>
-              <input
-                type="text"
-                name="studio_id"
-                value={this.state.studio_class.studio_id}
-                onChange={this.handleChange}
-              />
+              <div>
+                <label>Studio: </label>
+                <select
+                  name="studio_id"
+                  className="studioSelect"
+                  onChange={this.handleChange}
+                >
+                  {this.props.studios.map(studio => {
+                    return (
+                      <option key={studio.id.toString()} value={studio.id}>
+                        {" "}
+                        {studio.name}{" "}
+                      </option>
+                    );
+                  })}
+                </select>
+              </div>
               <label>Type: </label>
               <input
                 type="text"
@@ -97,4 +107,6 @@ class ClassesAddPopup extends React.Component {
   }
 }
 
-export default connect(null, { addClass })(ClassesAddPopup);
+export default connect(state => ({ studios: state.studios.all }), { addClass })(
+  ClassesAddPopup
+);
