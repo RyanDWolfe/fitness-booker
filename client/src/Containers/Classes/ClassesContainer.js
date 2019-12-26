@@ -29,7 +29,10 @@ class ClassesContainer extends Component {
           </div>
           <h3>Classes:</h3>
           <ul id="classList">
-            <ClassCards classes={this.props.classes} />
+            <ClassCards
+              classes={this.props.classes}
+              studios={this.props.studios}
+            />
           </ul>
         </div>
       </div>

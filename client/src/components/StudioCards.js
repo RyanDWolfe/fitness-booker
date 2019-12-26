@@ -15,7 +15,6 @@ const StudioCards = ({ studios }) => {
               <strong>Address: </strong>
               {studio.address}
             </p>
-            <h3>Available Classes: 4</h3> {/*make dynamic*/}
           </div>
           <div>
             <StudiosRemovePopup id={studio.id} />
