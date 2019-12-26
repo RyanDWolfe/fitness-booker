@@ -144,16 +144,50 @@ export const getReservations = () => {
   };
 };
 
-export const addReservation = reservation => {
-  return {
-    type: "ADD_RESERVATION",
-    reservation
+export const addReservation = reservationData => {
+  return async dispatch => {
+    try {
+      const response = await fetch(
+        "http://localhost:3001/api/v1/reservations",
+        {
+          method: "POST",
+          body: JSON.stringify(reservationData),
+          headers: {
+            "Content-Type": "application/json"
+          }
+        }
+      );
+      const data = await response.json();
+      dispatch({
+        type: "ADD_RESERVATION",
+        reservation: data
+      });
+    } catch (err) {
+      console.log(err);
+    }
   };
 };
 
 export const removeReservation = id => {
-  return {
-    type: "REMOVE_RESERVATION",
-    id
+  return async dispatch => {
+    try {
+      const response = await fetch(
+        `http://localhost:3001/api/v1/reservations/${id}`,
+        {
+          method: "DELETE",
+          body: JSON.stringify(id),
+          headers: {
+            "Content-Type": "application/json"
+          }
+        }
+      );
+      const data = await response.json();
+      dispatch({
+        type: "REMOVE_RESERVATION",
+        reservation: data
+      });
+    } catch (err) {
+      console.log(err);
+    }
   };
 };
