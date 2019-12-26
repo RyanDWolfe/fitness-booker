@@ -1,9 +1,11 @@
 import React from "react";
+import ClassesRemovePopup from "../Containers/Classes/ClassesRemovePopup";
+
 const ClassCards = ({ classes, studios }) => {
   const studioList = studios;
   // studioList has the studios in an array of objects
-  debugger;
-  console.log(studioList);
+  // debugger;
+  // console.log(studioList);
   return classes.map(card => {
     return (
       <li key={card.id.toString()}>
@@ -22,6 +24,7 @@ const ClassCards = ({ classes, studios }) => {
             </p>
           </div>
           <div>
+            <ClassesRemovePopup id={card.id} />
             <button className="reserve">Reserve</button>
           </div>
         </div>
