@@ -1,5 +1,6 @@
 import React from "react";
 import ClassesRemovePopup from "../Containers/Classes/ClassesRemovePopup";
+import ReservationsAddPopup from "../Containers/Reservations/ReservationsAddPopup";
 
 const ClassCards = ({ classes, studios }) => {
   const studioList = studios;
@@ -27,7 +28,7 @@ const ClassCards = ({ classes, studios }) => {
             <div align="right">
               <ClassesRemovePopup id={card.id} />
             </div>
-            <button className="reserve">Reserve</button>
+            <ReservationsAddPopup studio_class={card} />
           </div>
         </div>
       </li>

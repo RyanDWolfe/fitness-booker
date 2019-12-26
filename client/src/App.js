@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import "./App.css";
 import Navbar from "./components/NavBar";
 import HomeContainer from "./Containers/HomeContainer";
-import MyScheduleContainer from "./Containers/MyScheduleContainer";
+import MyScheduleContainer from "./Containers/Reservations/MyScheduleContainer";
 import StudiosContainer from "./Containers/Studios/StudiosContainer";
 import ClassesContainer from "./Containers/Classes/ClassesContainer";
 

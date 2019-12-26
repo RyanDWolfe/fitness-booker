@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { getReservations } from "../Actions/actions";
-import ReservationCards from "../components/ReservationCards";
+import { getReservations } from "../../Actions/actions";
+import ReservationCards from "../../components/ReservationCards";
 
 class MyScheduleContainer extends Component {
   async componentDidMount() {
