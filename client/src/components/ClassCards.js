@@ -24,7 +24,9 @@ const ClassCards = ({ classes, studios }) => {
             </p>
           </div>
           <div>
-            <ClassesRemovePopup id={card.id} />
+            <div align="right">
+              <ClassesRemovePopup id={card.id} />
+            </div>
             <button className="reserve">Reserve</button>
           </div>
         </div>

@@ -239,6 +239,7 @@ form .submit:hover {
 }
 
 .reserve {
+  margin: 50px 10px 10px 10px;
   background: rgb(37, 40, 233);
   color: white;
 }
