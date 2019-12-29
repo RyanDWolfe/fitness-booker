@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import Popup from "reactjs-popup";
 import "../../App.css";
 import { addReservation } from "../../Actions/actions";
+import ClassCards from "../../components/ClassCards";
 
 class ReservationsAddPopup extends React.Component {
   state = {
@@ -17,11 +18,15 @@ class ReservationsAddPopup extends React.Component {
   };
 
   handleSubmit = event => {
-    debugger;
-    this.props.addReservation("reservation");
+    this.props.addReservation(this.reservation);
   };
 
-  //need to create the reservations object from this.props.card
+  reservation = {
+    status: "1",
+    user_id: "1",
+    studio_id: this.props.studio_class.studio_id,
+    studio_class_id: this.props.studio_class.id
+  };
 
   render() {
     return (
