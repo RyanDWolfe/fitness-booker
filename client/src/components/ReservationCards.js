@@ -4,7 +4,7 @@ import ReservationsRemovePopup from "../Containers/Reservations/ReservationsRemo
 const ReservationCards = ({ reservations }) => {
   return reservations.map(reservation => {
     let reservation_status;
-    if (reservation.status == 1) {
+    if (reservation.status === 1) {
       reservation_status = "Active";
     } else {
       reservation_status = "Canceled";
