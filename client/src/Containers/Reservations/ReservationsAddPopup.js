@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import Popup from "reactjs-popup";
 import "../../App.css";
 import { addReservation } from "../../Actions/actions";
-import ClassCards from "../../components/ClassCards";
 
 class ReservationsAddPopup extends React.Component {
   state = {

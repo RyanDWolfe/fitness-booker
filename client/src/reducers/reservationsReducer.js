@@ -6,9 +6,9 @@ function reservationsReducer(state = { all: [] }, action) {
     case "ADD_RESERVATION":
       return { ...state, all: state.all.concat(action.reservation) };
 
-    case "REMOVE_RESERVATION":
-      idx = state.findIndex(state => state.reservation.id === action.id);
-      return [...state.slice(0, idx), ...state.slice(idx + 1)];
+    case "CANCEL_RESERVATION": // make this a change status
+      // idx = state.findIndex(state => state.reservation.id === action.id);
+      return state;
 
     default:
       return state;

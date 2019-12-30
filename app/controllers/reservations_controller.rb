@@ -10,9 +10,9 @@ class ReservationsController < ApplicationController
     render json: reservation
   end
 
-  def update
+  def update 
     reservation = Reservation.find(params[:id])
-    reservation.update_attributes(reservation_param)
+    reservation.update_attributes(status: 2)
   end
 
   def destroy

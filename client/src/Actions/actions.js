@@ -168,13 +168,13 @@ export const addReservation = reservationData => {
   };
 };
 
-export const removeReservation = id => {
+export const cancelReservation = id => {
   return async dispatch => {
     try {
       const response = await fetch(
         `http://localhost:3001/api/v1/reservations/${id}`,
         {
-          method: "DELETE",
+          method: "PATCH",
           body: JSON.stringify(id),
           headers: {
             "Content-Type": "application/json"
@@ -183,7 +183,7 @@ export const removeReservation = id => {
       );
       const data = await response.json();
       dispatch({
-        type: "REMOVE_RESERVATION",
+        type: "CANCEL_RESERVATION",
         reservation: data
       });
     } catch (err) {

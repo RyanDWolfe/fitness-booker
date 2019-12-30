@@ -8,7 +8,7 @@ class StudiosController < ApplicationController
 
   def show
     studio = Studio.find(params[:id])
-    classes = studio.studio_classes.all #not needed anymore
+    classes = studio.studio_classes.all 
     render json: classes
   end
 
