@@ -3,7 +3,7 @@ import ClassesRemovePopup from "../Containers/Classes/ClassesRemovePopup";
 import ReservationsAddPopup from "../Containers/Reservations/ReservationsAddPopup";
 
 const ClassCards = ({ classes, studios }) => {
-  let result;
+  // let result;
   // let result2 = studios.find(({ id }) => id === 3);
   // result corectly grabs the object and result.name works
   // let result3 = studios.filter(studio => studio.id === classes[0].id);
