@@ -6,9 +6,13 @@ import ClassesAddPopup from "./ClassesAddPopup";
 
 class ClassesContainer extends Component {
   async componentDidMount() {
-    this.props.getClasses();
-    this.props.getStudios();
+    const promises = [];
+    promises.push(this.props.getStudios());
+    promises.push(this.props.getClasses());
+    await Promise.all(promises);
   }
+
+  // TODO: figure out when render is called, is it after a prop is set or when componentdidmount finishes
 
   render() {
     return (
