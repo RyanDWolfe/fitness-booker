@@ -1,11 +1,15 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { getReservations } from "../../Actions/actions";
+import { getStudios, getClasses, getReservations } from "../../Actions/actions";
 import ReservationCards from "../../components/ReservationCards";
 
 class MyScheduleContainer extends Component {
   async componentDidMount() {
-    this.props.getReservations();
+    const promises = [];
+    promises.push(this.props.getStudios());
+    promises.push(this.props.getClasses());
+    promises.push(this.props.getReservations());
+    await Promise.all(promises);
   }
 
   render() {
@@ -14,7 +18,11 @@ class MyScheduleContainer extends Component {
         <div className="listWrapper">
           <h3>Reservations:</h3>
           <ul id="reservationList">
-            <ReservationCards reservations={this.props.reservations} />
+            <ReservationCards
+              studios={this.props.studios}
+              classes={this.props.classes}
+              reservations={this.props.reservations}
+            />
           </ul>
         </div>
       </div>
@@ -22,6 +30,15 @@ class MyScheduleContainer extends Component {
   }
 }
 
-export default connect(state => ({ reservations: state.reservations.all }), {
-  getReservations
-})(MyScheduleContainer);
+export default connect(
+  state => ({
+    studios: state.studios.all,
+    classes: state.classes.all,
+    reservations: state.reservations.all
+  }),
+  {
+    getStudios,
+    getClasses,
+    getReservations
+  }
+)(MyScheduleContainer);
