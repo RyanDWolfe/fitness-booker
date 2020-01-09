@@ -27,7 +27,8 @@ const ReservationCards = ({ studios, classes, reservations }) => {
           <h1>Status: {reservation_status}</h1>
           <h3>Class: {matchingClass.name}</h3>
           <h3>Studio: {matchingStudio.name}</h3>
-          <ReservationsRemovePopup id={reservation.id} />
+          {/* if ({reservation_status} === "Active") {<h3>YES!</h3>} */}
+          {<ReservationsRemovePopup id={reservation.id} />}
         </div>
       </li>
     );

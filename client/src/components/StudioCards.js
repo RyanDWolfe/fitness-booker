@@ -3,8 +3,25 @@ import StudiosRemovePopup from "../Containers/Studios/StudiosRemovePopup";
 
 const StudioCards = ({ studios }) => {
   return studios.map(studio => {
+    return <StudioCard key={studio.id.toString()} studio={studio} />;
+  });
+};
+
+export default StudioCards;
+
+class StudioCard extends React.Component {
+  state = {
+    count: 0
+  };
+
+  countUp = () => {
+    this.setState({ count: this.state.count + 1 });
+  };
+
+  render() {
+    const { studio } = this.props;
     return (
-      <li key={studio.id.toString()}>
+      <li>
         <div className="studioCard">
           <div>
             {" "}
@@ -15,6 +32,8 @@ const StudioCards = ({ studios }) => {
               <strong>Address: </strong>
               {studio.address}
             </p>
+            <button onClick={this.countUp}>Like</button>
+            <h3>{this.state.count}</h3>
           </div>
           <div>
             <StudiosRemovePopup id={studio.id} />
@@ -22,7 +41,5 @@ const StudioCards = ({ studios }) => {
         </div>
       </li>
     );
-  });
-};
-
-export default StudioCards;
+  }
+}
