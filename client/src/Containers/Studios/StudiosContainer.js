@@ -13,14 +13,7 @@ class StudiosContainer extends Component {
     return (
       <div>
         <div className="listWrapper">
-          <div className="inputContainer">
-            <input
-              className="studioInput"
-              type="text"
-              placeholder="search"
-              maxLength="50"
-            />
-          </div>
+          <div className="inputContainer"></div>
           <div>
             <StudiosAddPopup />
           </div>

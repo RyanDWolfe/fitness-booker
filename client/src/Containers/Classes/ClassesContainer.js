@@ -12,20 +12,11 @@ class ClassesContainer extends Component {
     await Promise.all(promises);
   }
 
-  // TODO: figure out when render is called, is it after a prop is set or when componentdidmount finishes
-
   render() {
     return (
       <div>
         <div className="listWrapper">
-          <div className="inputContainer">
-            <input
-              className="classInput"
-              type="text"
-              placeholder="search"
-              maxLength="50"
-            />
-          </div>
+          <div className="inputContainer"></div>
           <div>
             <ClassesAddPopup />
           </div>
